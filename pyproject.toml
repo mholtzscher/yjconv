@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "yjconv"
 version = "0.1.0"
-description = "Convert json to yaml and yaml to json from command line"
+description = "Convert json to yaml and yaml to json from command line."
 authors = [
     "Michael Holtzscher <mholtz@protonmail.com>",
     "Ivan Greene <ivan@ivan.sh>",
@@ -12,8 +12,12 @@ readme = "README.md"
 repository = "https://github.com/mholtzscher/yjconv"
 homepage = "https://github.com/mholtzscher/yjconv"
 
+[tool.poetry.scripts]
+yjconv = "yjconv.app:convert"
+
 [tool.poetry.dependencies]
 python = "^3.6"
+click = "^7.0"
 
 [tool.poetry.dev-dependencies]
 black = "^18.3-alpha.4"

@@ -3,18 +3,18 @@ setup:
 	poetry run pre-commit install
 
 test:
-	poetry run pytest --cov=cleanser -q tests/
+	poetry run pytest --cov=yjconv -q tests/
 	rm test-output.xml
 
 ci-test:
-	poetry run pytest tests/ --cov=cleanser --cov-report html
+	poetry run pytest tests/ --cov=yjconv --cov-report html
 	poetry run codecov
 
 lint:
-	poetry run pylint cleanser
+	poetry run pylint yjconv
 
 mypy:
-	poetry run mypy cleanser
+	poetry run mypy yjconv
 
 format:
-	poetry run black cleanser tests
+	poetry run black yjconv tests
