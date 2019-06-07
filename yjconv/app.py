@@ -8,10 +8,16 @@ from .utils import parse_as_json, parse_as_yaml
 
 @click.command()
 @click.option(
-    "-f", "--file", type=click.File("r"), help="The file to open and convert."
+    "-f",
+    "--file",
+    type=click.File("r"),
+    help="The file to open and convert. If not set then defaults to stdin.",
 )
 @click.option(
-    "-o", "--output", type=click.File("w"), help="The destination to write output."
+    "-o",
+    "--output",
+    type=click.File("w"),
+    help="The destination to write output. If not set then defaults to stdout.",
 )
 @click.option(
     "-j",
@@ -19,10 +25,10 @@ from .utils import parse_as_json, parse_as_yaml
     "file_type",
     flag_value="json",
     default=True,
-    help="Flag for json input (Default)",
+    help="Flag for json input (Default).",
 )
 @click.option(
-    "-y", "--yaml", "file_type", flag_value="yaml", help="Flag for yaml input"
+    "-y", "--yaml", "file_type", flag_value="yaml", help="Flag for yaml input."
 )
 def convert(file_type, file, output):
     """Convert json to yaml and yaml to json.
